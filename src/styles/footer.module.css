@@ -1,0 +1,18 @@
+/* styles/footer.module.css */
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+  
+.link {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
