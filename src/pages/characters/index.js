@@ -37,7 +37,7 @@ const Character = () => {
 
   return (
     <div>
-      <h1>Lista de Personagens</h1>
+      <h1 className="text-3xl font-bold underline">Lista de Personagens</h1>
       <input
         type="text"
         placeholder="Buscar por nome..."
