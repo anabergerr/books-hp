@@ -1,6 +1,8 @@
 // pages/BooksPage.js
 import { useEffect, useState } from 'react';
-import { getBooks } from '../utils/api';
+import { getBooks } from '../../utils/api';
+import Link from 'next/link';
+
 
 const BooksPage = () => {
   const [books, setBooks] = useState([]);
@@ -20,9 +22,8 @@ const BooksPage = () => {
         console.error('Error fetching books:', error);
       }
     };
-
+    console.log(books);
     fetchData();
-    console.log('livrossss',books[0].id)
   }, []);
 
   return (
@@ -30,7 +31,19 @@ const BooksPage = () => {
       <h1>Books</h1>
       <ul>
         {books.map((book) => (
-            <li key={book.id}>{book.attributes.title}</li>
+          <div key={book.id}>
+            <p>{book.attributes.title}</p>
+            <p>{book.attributes.release_date}</p>
+            <p>{book.attributes.author}</p>
+            <p>{book.attributes.pages}</p>
+            <img width={100} src={book.attributes.cover}/>
+            <a href={`/books/${book.attributes.slug}`}>
+              <a>Clique para saber mais</a>
+            </a>
+
+            <p>------------</p>
+          </div>
+            
         ))}
       </ul>
     </div>

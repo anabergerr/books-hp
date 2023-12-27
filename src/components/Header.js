@@ -7,13 +7,19 @@ function Header() {
       <nav className={styles.navigation}>
         <ul>
           <li>
-            <a>Home</a>
-          </li>
-          <li>
             <a>Sobre</a>
           </li>
           <li>
-            <a>Contato</a>
+            <a>Docs</a>
+          </li>
+          <li>
+            <a>Status</a>
+          </li>
+          <li>
+            <a>Books</a>
+          </li>
+          <li>
+            <a>Characters</a>
           </li>
         </ul>
       </nav>

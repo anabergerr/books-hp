@@ -3,9 +3,11 @@ import axios from 'axios';
 
 const api = axios.create({
   baseURL: 'https://api.potterdb.com/v1',
-  // Adicione headers ou outras configurações, se necessário
 });
 
 export const getBooks = () => api.get('/books');
 export const getBookById = (id) => api.get(`/books/${id}`);
-// Adicione funções para outros endpoints conforme necessário
+export const getMovies = () => api.get('/movies')
+export const getMovieById = (id) => api.get(`/movies/${id}`);
+
+
