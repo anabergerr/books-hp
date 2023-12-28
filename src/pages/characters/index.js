@@ -1,7 +1,10 @@
 // pages/index.js
+
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import Link from 'next/link';
+import Card from '@/components/Card';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 const Character = () => {
   const [characters, setCharacters] = useState([]);
@@ -36,33 +39,35 @@ const Character = () => {
   };
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">Lista de Personagens</h1>
+    <>
+    <Header />
+    <div className="container mb-80 p-8">
+      <h1 className="text-3xl font-bold underline mb-4">Lista de Personagens</h1>
       <input
         type="text"
         placeholder="Buscar por nome..."
         value={searchTerm}
         onChange={handleSearchChange}
+        className="mb-4 p-2 border border-gray-300 rounded"
       />
-      <p>Quantidade de itens: {totalItems}</p>
-      <ul>
+      <p className="mb-2">Quantidade de itens: {totalItems}</p>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {characters.map((character) => (
-          <li key={character.id}>
-            <div>
-              <p>{character.attributes.name}</p>
-              <a href={`/characters/${encodeURIComponent(character.attributes.slug)}`}>
-                <a>Veja Mais</a>
-              </a>
-            </div>
-          </li>
+          <Card key={character.id} data={character} type="characters" />
         ))}
-      </ul>
-      <div>
-        <button onClick={handleLoadMore} disabled={characters.length < pageSize}>
+      </div>
+      <div className="mt-4">
+        <button
+          onClick={handleLoadMore}
+          disabled={characters.length < pageSize}
+          className="py-2 px-4 bg-blue-500 text-white rounded-md cursor-pointer"
+        >
           Carregar Mais
         </button>
-      </div>
+      </div>  
     </div>
+    <Footer />
+  </>
   );
 };
 

@@ -1,18 +1,29 @@
 /* styles/footer.module.css */
 
-.footer {
+/* Substitua o conteúdo atual por: */
+
+.link {
+    text-decoration: underline;
+    color: #3182ce;
+    margin-right: 1rem;
+  }
+  
+  .footer {
+    background-color: rgb(157 23 77);
+    color: #cbd5e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
+  }
   
-.link {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
+  .footer p {
+    margin-bottom: 1rem;
+  }
+  
+  .footer div {
+    display: flex;
   }
   
