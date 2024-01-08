@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -9,7 +10,9 @@ export default function Home() {
       <main className="mb-10 flex-grow">
         {/* Imagem de fundo */}
         <div className="h-full relative">
-          <img
+          <Image
+            width={100}
+            height={100}
             src="/images/bg-hp.jpg"
             alt="Background"
             className="w-full h-full object-cover"

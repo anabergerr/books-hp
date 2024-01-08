@@ -1,8 +1,8 @@
-// pages/books/[slug].js
-
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { getBookById } from '../../utils/api';
+import Image from 'next/image';
+
 
 const BookDetailPage = () => {
   const router = useRouter();
@@ -32,10 +32,12 @@ const BookDetailPage = () => {
     <div className="container mx-auto p-8">
       <h1 className="text-4xl font-bold mb-4">{book.attributes.title}</h1>
       <div className="flex flex-col md:flex-row items-center md:items-start mb-6">
-        <img
+        <Image
           src={book.attributes.cover}
-          alt="Book cover"
+          alt="Imagem do livro harry potter"
           className="w-full md:w-1/3 md:mr-6 rounded-md shadow-md"
+          width={100}
+          height={100}
         />
         <div className="md:w-2/3">
           <p className="text-gray-600 mb-2">

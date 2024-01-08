@@ -1,7 +1,4 @@
-// pages/character/[slug].js
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-
+import { getCharactersDetails } from '../../utils/api';
 import DetailCard from '@/components/DetailCard';
 
 const CharacterDetail = ({ character }) => {
@@ -12,7 +9,7 @@ export async function getServerSideProps({ params }) {
   const { slug } = params;
 
   try {
-    const response = await axios.get(`https://api.potterdb.com/v1/characters?filter[slug_eq]=${slug}`);
+    const response = await getCharactersDetails(slug)
     const characters = response.data.data;
 
     const character = characters.find((char) => char.attributes.slug === slug);
@@ -23,7 +20,7 @@ export async function getServerSideProps({ params }) {
       },
     };
   } catch (error) {
-    console.error('Error fetching character details:', error);
+    console.error('Erro para carregar os dados:', error);
     return {
       props: {
         character: null,

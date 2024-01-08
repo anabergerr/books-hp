@@ -1,7 +1,5 @@
-// pages/index.js
-
+import { getCharacters } from '../../utils/api';
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import Card from '@/components/Card';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -16,13 +14,11 @@ const Character = () => {
   useEffect(() => {
     const fetchCharacters = async () => {
       try {
-        const response = await axios.get(
-          `https://api.potterdb.com/v1/characters?filter[name_cont]=${searchTerm}&page[number]=${currentPage}&page[size]=${pageSize}`
-        );
+        const response = await getCharacters(searchTerm,currentPage, pageSize)
         setCharacters(response.data.data);
         setTotalItems(response.data.meta.total);
       } catch (error) {
-        console.error('Error fetching characters:', error);
+        console.error('Erro ao carregar os dados:', error);
       }
     };
 
@@ -41,7 +37,7 @@ const Character = () => {
   return (
     <>
     <Header />
-    <div className="container mb-80 p-8">
+    <div className="container mb-20 mt-20 p-8">
       <h1 className="text-3xl font-bold underline mb-4">Lista de Personagens</h1>
       <input
         type="text"
