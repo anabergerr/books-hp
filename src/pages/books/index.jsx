@@ -1,7 +1,7 @@
 // pages/BooksPage.js
 
 import { useEffect, useState } from 'react';
-import { getBooks } from '../../utils/api';
+import { getBooks } from '@/utils/api';
 import Header from "@/components/Header"
 import Card from "@/components/Card"
 
