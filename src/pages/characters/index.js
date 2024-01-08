@@ -1,4 +1,4 @@
-import { getCharacters } from '../../utils/api';
+import { getCharacters } from '@/utils/api';
 import { useState, useEffect } from 'react';
 import Card from '@/components/Card';
 import Header from '@/components/Header';
