@@ -8,7 +8,6 @@ export default function Home() {
       <Header />
 
       <main className="mb-10 flex-grow">
-        {/* Imagem de fundo */}
         <div className="h-full relative">
           <Image
             width={100}
@@ -18,9 +17,7 @@ export default function Home() {
             className="w-full h-full object-cover"
           />
 
-          {/* Overlay transparente */}
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-            {/* Conteúdo centralizado */}
             <div className="text-center text-white">
               <h1 className="text-4xl font-bold mb-4">
                 Bem-vindo ao mundo de Harry Potter!

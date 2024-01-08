@@ -1,8 +1,16 @@
-import { getCharactersDetails } from '../../utils/api';
+import Header from '@/components/Header';
+import { getCharactersDetails } from '@/utils/api'
 import DetailCard from '@/components/DetailCard';
+import Footer from '@/components/Footer';
 
 const CharacterDetail = ({ character }) => {
-  return <DetailCard data={character} type="Personagem" />;
+  return (
+    <>
+      <Header />
+      <DetailCard data={character} type="Personagem" />;
+      <Footer />
+    </>
+  )
 };
 
 export async function getServerSideProps({ params }) {

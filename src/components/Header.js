@@ -9,13 +9,14 @@ function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const imageLogo = "https://potterdb.com/images/logo.svg"
+  const imageLogo = "https://potterdb.com/images/logo.svg";
 
   return (
     <header className="bg-pink-800 p-4 fixed w-full top-0 z-50">
       <nav className="flex justify-between items-center">
-        <Image src={imageLogo} className="text-white text-xl font-bold w-20" width={100} height={100} alt='Logo do site' />
-        {/* Menu hamburguer para dispositivos móveis */}
+        <Link href="/">
+          <Image src={imageLogo} className="text-white text-xl font-bold w-20" width={100} height={100} alt='Logo do site' />
+        </Link>
         <div className="lg:hidden">
           <button
             className="text-white focus:outline-none"
@@ -47,14 +48,12 @@ function Header() {
               <a className="text-white block py-2 px-4 hover:bg-gray-600" href="https://status.potterdb.com/">
                 Status
               </a>
-              <a className="text-white block py-2 px-4 hover:bg-gray-600">
-                <Link href="books">
-                  <span>Books</span>
-                </Link>
-              </a>
-              <a className="text-white block py-2 px-4 hover:bg-gray-600" href="characters">
+              <Link href="/books" className="text-white block py-2 px-4 hover:bg-gray-600">
+                Books
+              </Link>
+              <Link href="/characters" className="text-white block py-2 px-4 hover:bg-gray-600">
                 Characters
-              </a>
+              </Link>
             </div>
           )}
         </div>
@@ -76,14 +75,14 @@ function Header() {
             </a>
           </li>
           <li>
-            <a className="text-white hover:text-gray-300" href="books">
-              Books
-            </a>
+            <Link href="/books" className="text-white hover:text-gray-300">
+                Books
+            </Link>
           </li>
           <li>
-            <a className="text-white hover:text-gray-300" href="characters">
-              Characters
-            </a>
+            <Link href="/characters" className="text-white hover:text-gray-300">
+                Characters
+            </Link>
           </li>
         </ul>
       </nav>
